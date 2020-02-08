@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бонусное задание 1</title>
+</head>
+<body>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+    }
+    .wrapper{
+      height: 100vh;
+      width: 100%;
+      margin: 0 auto;
+    }
+    h1 {
+      padding: 40px;
+      text-align: center;
+    }
+    button {
+      padding: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      border: none;
+      margin: 0 auto;
+      display: block;
+      outline: none;
+      cursor: pointer;
+    }
+  </style>
+
+
+
+  <div class="wrapper">
+    <h1 id="color">#ffffff</h1>
+    <button id="change" type="button">New Color</button>
+  </div>
+
+
+
+  <script>
+    let textColor = document.querySelector('#color'),
+      buttonColor = document.querySelector('#change'),
+      wrapper = document.querySelector('.wrapper'),
+      color = function (){
+        let r = Math.floor(Math.random() * (256)),
+          g = Math.floor(Math.random() * (256)),
+          b = Math.floor(Math.random() * (256)),
+          c = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+          return c;
+      };
+    buttonColor.onclick = function(){
+    curentColor = color();
+    textColor.textContent = curentColor;
+    wrapper.setAttribute('style', 'background-color:' + curentColor);
+    buttonColor.setAttribute('style', 'color:' + curentColor);
+    }
+  </script>
+</body>
+</html>
